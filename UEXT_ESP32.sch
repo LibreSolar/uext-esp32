@@ -1,0 +1,390 @@
+EESchema Schematic File Version 4
+LIBS:UEXT_ESP32-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ESP32 WROOM to UEXT Adapter"
+Date "2019-03-07"
+Rev "0.2"
+Comp "Libre Solar"
+Comment1 "Author: Martin Jäger"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Project:C C1
+U 1 1 5BD09058
+P 2300 3200
+F 0 "C1" H 2392 3246 50  0000 L CNN
+F 1 "10uF" H 2392 3155 50  0000 L CNN
+F 2 "LibreSolar:C_0805_2012" H 2300 3000 50  0001 C CNN
+F 3 "" H 2325 3275 50  0000 C CNN
+F 4 "Murata" H 2300 3200 50  0001 C CNN "Manufacturer"
+F 5 "GRM21BR61C106KE15L" H 2300 3200 50  0001 C CNN "PartNumber"
+F 6 "16V, X5R" H 2300 3200 50  0001 C CNN "Remarks"
+	1    2300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5BD0937B
+P 3400 5000
+F 0 "#PWR04" H 3400 4750 50  0001 C CNN
+F 1 "GND" H 3405 4827 50  0000 C CNN
+F 2 "" H 3400 5000 50  0001 C CNN
+F 3 "" H 3400 5000 50  0001 C CNN
+	1    3400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5BD095C5
+P 6600 3400
+F 0 "#PWR09" H 6600 3150 50  0001 C CNN
+F 1 "GND" H 6605 3227 50  0000 C CNN
+F 2 "" H 6600 3400 50  0001 C CNN
+F 3 "" H 6600 3400 50  0001 C CNN
+	1    6600 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2800 7600 2800
+Wire Wire Line
+	7100 2900 7600 2900
+$Comp
+L power:+3V3 #PWR08
+U 1 1 5BD09B68
+P 7200 1900
+F 0 "#PWR08" H 7200 1750 50  0001 C CNN
+F 1 "+3V3" H 7215 2073 50  0000 C CNN
+F 2 "" H 7200 1900 50  0001 C CNN
+F 3 "" H 7200 1900 50  0001 C CNN
+	1    7200 1900
+	1    0    0    -1  
+$EndComp
+Text Label 7600 2800 2    50   ~ 0
+GPIO0
+$Comp
+L power:GND #PWR03
+U 1 1 5BD0A3E5
+P 2300 3400
+F 0 "#PWR03" H 2300 3150 50  0001 C CNN
+F 1 "GND" H 2305 3227 50  0000 C CNN
+F 2 "" H 2300 3400 50  0001 C CNN
+F 3 "" H 2300 3400 50  0001 C CNN
+	1    2300 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR02
+U 1 1 5BD0A40F
+P 2300 3000
+F 0 "#PWR02" H 2300 2850 50  0001 C CNN
+F 1 "+3V3" H 2315 3173 50  0000 C CNN
+F 2 "" H 2300 3000 50  0001 C CNN
+F 3 "" H 2300 3000 50  0001 C CNN
+	1    2300 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3000 2300 3100
+Wire Wire Line
+	2300 3300 2300 3400
+Wire Wire Line
+	7100 2200 7600 2200
+Text Label 7600 2200 2    50   ~ 0
+UEXT_TX
+$Comp
+L power:+3V3 #PWR0101
+U 1 1 5BD0E0D7
+P 3400 2000
+F 0 "#PWR0101" H 3400 1850 50  0001 C CNN
+F 1 "+3V3" H 3415 2173 50  0000 C CNN
+F 2 "" H 3400 2000 50  0001 C CNN
+F 3 "" H 3400 2000 50  0001 C CNN
+	1    3400 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2300 7600 2300
+Text Label 7600 2300 2    50   ~ 0
+UEXT_RX
+$Comp
+L Project:ESP32-WROOM-32D U1
+U 1 1 5C2E33BB
+P 3400 3500
+F 0 "U1" H 2950 4900 50  0000 C CNN
+F 1 "ESP32-WROOM-32D" H 3900 4900 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H 3400 2000 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 3100 3550 50  0001 C CNN
+	1    3400 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 2000 3400 2100
+Wire Wire Line
+	3400 4900 3400 5000
+Wire Wire Line
+	4000 3400 4400 3400
+Wire Wire Line
+	4000 3300 4400 3300
+Text Label 4400 3400 2    50   ~ 0
+UEXT_RX
+Text Label 4400 3300 2    50   ~ 0
+UEXT_TX
+Wire Wire Line
+	7100 3100 7600 3100
+Wire Wire Line
+	2800 2300 2400 2300
+NoConn ~ 2800 3500
+NoConn ~ 2800 3600
+NoConn ~ 2800 3700
+NoConn ~ 2800 3800
+NoConn ~ 2800 3900
+NoConn ~ 2800 4000
+Wire Wire Line
+	4000 2300 4400 2300
+Wire Wire Line
+	4000 2500 4400 2500
+Text Label 4400 2300 2    50   ~ 0
+GPIO0
+Text Label 4400 2500 2    50   ~ 0
+GPIO2
+$Comp
+L Project:LibreSolar_Logo LOGO1
+U 1 1 5C2E747A
+P 3450 7150
+F 0 "LOGO1" H 3820 7220 50  0000 L CNN
+F 1 "LibreSolar_Logo" H 3820 7129 50  0000 L CNN
+F 2 "LibreSolar:LIBRESOLAR_LOGO" H 3470 7140 60  0001 C CNN
+F 3 "" H 3470 7140 60  0001 C CNN
+	1    3450 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO2
+U 1 1 5C2E769C
+P 5050 7150
+F 0 "LOGO2" H 5297 7221 50  0000 L CNN
+F 1 "Logo_Open_Hardware_Small" H 5297 7130 50  0000 L CNN
+F 2 "Symbol:OSHW-Logo_5.7x6mm_SilkScreen" H 5050 7150 50  0001 C CNN
+F 3 "~" H 5050 7150 50  0001 C CNN
+	1    5050 7150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4000 2700
+NoConn ~ 4000 2800
+NoConn ~ 4000 2900
+NoConn ~ 4000 3000
+NoConn ~ 4000 3100
+NoConn ~ 4000 3200
+NoConn ~ 4000 3500
+NoConn ~ 4000 3600
+NoConn ~ 4000 3700
+NoConn ~ 4000 3800
+NoConn ~ 4000 3900
+NoConn ~ 4000 4000
+NoConn ~ 4000 4100
+NoConn ~ 4000 4200
+NoConn ~ 4000 4300
+NoConn ~ 4000 4400
+NoConn ~ 4000 4500
+NoConn ~ 4000 4600
+NoConn ~ 2800 2500
+NoConn ~ 2800 2600
+Text Notes 4550 2600 0    50   ~ 0
+UART at IO1/3\nfor programming
+Text Notes 4500 3400 0    50   ~ 0
+UART at IO16/17\nfor AT commands
+$Comp
+L Project:UEXT J1
+U 1 1 5C810B01
+P 6700 2600
+F 0 "J1" H 6781 3465 50  0000 C CNN
+F 1 "UEXT" H 6781 3374 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 6700 1650 50  0001 C CIN
+F 3 "" H 6700 2500 60  0000 C CNN
+F 4 "Sullins Connector Solutions" H 6700 2600 50  0001 C CNN "Manufacturer"
+F 5 "SFH11-PBPC-D05-ST-BK" H 6700 2600 50  0001 C CNN "PartNumber"
+	1    6700 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 1900 7200 2000
+Wire Wire Line
+	7200 2000 7100 2000
+NoConn ~ 7100 2500
+NoConn ~ 7100 3000
+Wire Wire Line
+	6600 3300 6600 3400
+$Comp
+L Connector_Generic:Conn_01x06 J2
+U 1 1 5C815F35
+P 9000 2600
+F 0 "J2" H 8919 2075 50  0000 C CNN
+F 1 "Conn_01x06" H 8919 2166 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9000 2600 50  0001 C CNN
+F 3 "~" H 9000 2600 50  0001 C CNN
+	1    9000 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5C816C76
+P 9700 2900
+F 0 "#PWR05" H 9700 2650 50  0001 C CNN
+F 1 "GND" H 9705 2727 50  0000 C CNN
+F 2 "" H 9700 2900 50  0001 C CNN
+F 3 "" H 9700 2900 50  0001 C CNN
+	1    9700 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR01
+U 1 1 5C817032
+P 9700 2500
+F 0 "#PWR01" H 9700 2350 50  0001 C CNN
+F 1 "+3V3" H 9715 2673 50  0000 C CNN
+F 2 "" H 9700 2500 50  0001 C CNN
+F 3 "" H 9700 2500 50  0001 C CNN
+	1    9700 2500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 2600 9700 2600
+Wire Wire Line
+	9700 2600 9700 2500
+Wire Wire Line
+	9200 2500 9500 2500
+Wire Wire Line
+	9200 2300 9500 2300
+Text Label 9500 2300 2    50   ~ 0
+DTR
+Text Label 9500 2400 2    50   ~ 0
+FTDI_RX
+Text Label 9500 2500 2    50   ~ 0
+FTDI_TX
+Wire Wire Line
+	4000 2400 4400 2400
+Wire Wire Line
+	4000 2600 4400 2600
+Text Label 4400 2400 2    50   ~ 0
+FTDI_RX
+Text Label 4400 2600 2    50   ~ 0
+FTDI_TX
+Wire Wire Line
+	9200 2400 9500 2400
+Wire Wire Line
+	9200 2800 9700 2800
+Wire Wire Line
+	9700 2800 9700 2900
+Wire Wire Line
+	9200 2700 9500 2700
+Text Label 9500 2700 2    50   ~ 0
+RTS
+$Comp
+L Transistor_BJT:MMBT3904 Q1
+U 1 1 5C80ED46
+P 9600 4800
+F 0 "Q1" H 9791 4846 50  0000 L CNN
+F 1 "MMBT3904" H 9791 4755 50  0000 L CNN
+F 2 "LibreSolar:SOT-23" H 9800 4725 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 9600 4800 50  0001 L CNN
+	1    9600 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Project:R R1
+U 1 1 5C80EE54
+P 9200 4800
+F 0 "R1" V 9100 4800 50  0000 C CNN
+F 1 "10k" V 9300 4800 50  0000 C CNN
+F 2 "LibreSolar:R_0603_1608" V 9025 4700 50  0001 C CNN
+F 3 "" H 9200 4800 50  0000 C CNN
+F 4 "Yageo" H 9200 4800 50  0001 C CNN "Manufacturer"
+F 5 "RC0603FR-0710KL" H 9200 4800 50  0001 C CNN "PartNumber"
+	1    9200 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3904 Q2
+U 1 1 5C80F37A
+P 9600 5500
+F 0 "Q2" H 9791 5454 50  0000 L CNN
+F 1 "MMBT3904" H 9791 5545 50  0000 L CNN
+F 2 "LibreSolar:SOT-23" H 9800 5425 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 9600 5500 50  0001 L CNN
+	1    9600 5500
+	1    0    0    1   
+$EndComp
+$Comp
+L Project:R R2
+U 1 1 5C80FEC3
+P 9200 5500
+F 0 "R2" V 9100 5500 50  0000 C CNN
+F 1 "10k" V 9300 5500 50  0000 C CNN
+F 2 "LibreSolar:R_0603_1608" V 9025 5400 50  0001 C CNN
+F 3 "" H 9200 5500 50  0000 C CNN
+F 4 "Yageo" H 9200 5500 50  0001 C CNN "Manufacturer"
+F 5 "RC0603FR-0710KL" H 9200 5500 50  0001 C CNN "PartNumber"
+	1    9200 5500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9400 4800 9300 4800
+Wire Wire Line
+	9400 5500 9300 5500
+Wire Wire Line
+	9700 4600 9700 4300
+Wire Wire Line
+	9700 5000 9700 5100
+Wire Wire Line
+	9700 5100 9000 5100
+Wire Wire Line
+	9000 5100 9000 5500
+Wire Wire Line
+	9000 5500 8600 5500
+Wire Wire Line
+	9100 5500 9000 5500
+Connection ~ 9000 5500
+Wire Wire Line
+	9100 4800 8900 4800
+Wire Wire Line
+	8900 4800 8900 5200
+Wire Wire Line
+	8900 5200 9700 5200
+Wire Wire Line
+	9700 5200 9700 5300
+Connection ~ 8900 4800
+Wire Wire Line
+	8900 4800 8600 4800
+Wire Wire Line
+	9700 5700 9700 6000
+Text Label 9700 6000 1    50   ~ 0
+RESET
+Text Label 2400 2300 0    50   ~ 0
+RESET
+Text Label 7600 3100 2    50   ~ 0
+RESET
+Text Label 7600 2900 2    50   ~ 0
+GPIO2
+Text Label 8600 4800 0    50   ~ 0
+RTS
+Text Label 8600 5500 0    50   ~ 0
+DTR
+Text Label 9700 4300 3    50   ~ 0
+GPIO0
+Text Notes 8600 4000 0    50   ~ 0
+See Sparkfun / Adafruit boards
+Text Notes 8600 3900 0    100  ~ 0
+Reset and boot circuit
+Text Notes 8600 1500 0    100  ~ 0
+FTDI for programming
+Text Notes 6300 1500 0    100  ~ 0
+UEXT to host MCU
+Text Notes 2700 1500 0    100  ~ 0
+ESP32 WROOM module
+$EndSCHEMATC
